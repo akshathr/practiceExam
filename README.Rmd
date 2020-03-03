@@ -57,7 +57,7 @@ late.performance
 ```
 
 Construct a tidy data set to that give weather summaries for each (airport, day).  Use the total precipitation, minimum visibility, maximum wind_gust, and average wind_speed.  
-```{r}
+```{r, message=FALSE, warning=FALSE}
 weather.final = weather %>% mutate(day_of_year = yday(time_hour)) %>% 
   group_by(origin, day_of_year) %>% 
   summarise(precipitation = sum(precip, na.rm = T),
